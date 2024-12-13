@@ -1,0 +1,13 @@
+{
+  "name": "IDK",
+  "version": "1.0.0",
+  "description": "IDK as well",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+   "dependencies": {
+    "puppeteer": "^23.9.0"
+  },
+  "type": "module"
+}
