@@ -1,15 +1,14 @@
 import puppeteer from "puppeteer";
 
-const url = "https://www.google.com/";
+(async () => {
+  const browser = await puppeteer.launch({
+    headless: true, // Run in headless mode
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
 
-const main = async () => {
-  const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  for (let i = 0; i < 5; i++) {
-    await page.goto(url, { waitUntil: "load", timeout: 0 });
-    console.log("good");
-  }
-  await browser.close();
-};
+  await page.goto("https://example.com");
+  console.log(await page.title());
 
-main();
+  await browser.close();
+})();
